@@ -57,7 +57,7 @@
 	#Range: 100 ~ 9999
 	compassWidth = 200
 	#Create waypoint on death
-	autoDeathWaypoint = true
+	autoDeathWaypoint = false
 	#Icon scale
 	#Range: 50 ~ 200
 	iconScale = 50

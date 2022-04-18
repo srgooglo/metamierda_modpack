@@ -9,7 +9,7 @@
 
 	[common.villagegen]
 		#Set to true if waystones should be added to the generation of villages. Some villages may still spawn without a waystone.
-		spawnInVillages = true
+		spawnInVillages = false
 		#Ensures that pretty much every village will have a waystone, by spawning it as early as possible. In addition, this means waystones will generally be located in the center of the village.
 		forceSpawnInVillages = false
 
@@ -21,7 +21,7 @@
 			worldGenDimensionAllowList = ["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]
 			#Approximate chunk distance between waystones generated freely in world generation. Set to 0 to disable generation.
 			#Range: > 0
-			worldGenFrequency = 25
+			worldGenFrequency = 0
 			#List of dimensions that waystones are not allowed to spawn in through world gen. Only used if worldGenDimensionAllowList is empty.
 			worldGenDimensionDenyList = []
 

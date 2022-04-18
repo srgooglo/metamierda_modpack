@@ -3,9 +3,9 @@
   "hud": {
     "distance": 40,
     "x": -35,
-    "y": -30,
+    "y": -25,
     "scale": 0.6,
-    "hideDelay": 20,
+    "hideDelay": 80,
     "anchorPoint": "TOP_LEFT",
     "showEntity": false,
     "showBar": true,
