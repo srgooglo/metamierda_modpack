@@ -150,11 +150,14 @@ const tasks = new listr([
             profiles = JSON.parse(profiles)
 
             profiles["metamierda_modpack"] = {
+                created : "2022-05-05T12:49:42.002Z",
+                gameDir : gameDataPath,
+                javaArgs : "-Xmx4G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M",
+                lastVersionId: latestRelease.name,
+                name : latestRelease.name,
                 type: "custom",
                 version: latestRelease.name,
-                game: "metamierda_modpack",
                 icon: "Chest",
-                javaArgs: "-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:CMSIncrementalDutyCycle=10",
             }
 
             fs.writeFileSync(profilesFilePath, JSON.stringify(profiles, null, 2))
@@ -172,4 +175,12 @@ const tasks = new listr([
 
 tasks.run().catch(err => {
     console.error(err)
+})
+
+process.on("exit", () => {
+    console.log("\n\n\t Finished. Exiting on 3 seconds...")
+
+    setTimeout(() => {
+        process.exit(0)
+    }, 3000)
 })
