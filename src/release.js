@@ -39,6 +39,7 @@ const tasks = new Listr([
                     observer.error(error.message)
                     process.exit(1)
                 })
+                
                 gamedataBundle.pipe(outputWrite)
 
                 gamedataBundle.directory(clientDataPath, false)
