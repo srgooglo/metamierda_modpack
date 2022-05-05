@@ -145,11 +145,11 @@ const tasks = new listr([
             return fs.existsSync(profilesFilePath)
         },
         task: async (ctx, task) => {
-            let profiles = fs.readFileSync(profilesFilePath, "utf8")
+            let launcherJSON = fs.readFileSync(profilesFilePath, "utf8")
 
-            profiles = JSON.parse(profiles)
+            launcherJSON = JSON.parse(launcherJSON)
 
-            profiles["metamierda_modpack"] = {
+            launcherJSON.profiles["metamierda_modpack"] = {
                 created : "2022-05-05T12:49:42.002Z",
                 gameDir : gameDataPath,
                 javaArgs : "-Xmx4G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M",
@@ -160,7 +160,7 @@ const tasks = new listr([
                 icon: "Chest",
             }
 
-            fs.writeFileSync(profilesFilePath, JSON.stringify(profiles, null, 2))
+            fs.writeFileSync(profilesFilePath, JSON.stringify(launcherJSON, null, 2))
 
             fse.copySync(path.join(gameDataPath, "versions"), path.join(minecraftGameFolder, "versions"))
         }
