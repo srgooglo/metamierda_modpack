@@ -6,3 +6,30 @@
 /**/**/usernamecache.json
 /**/**/whitelist.json
 /**/**/.DS_Store
+
+# Secrets
+/**/**/.env
+/**/**/origin.server
+/**/**/server.manifest
+/**/**/server.registry
+/**/**/memamio_temp
+
+# Trash
+/**/**/.crash.log
+/**/**/.tmp
+/**/**/dist
+/**/**/node_modules
+/**/**/corenode_modules
+/**/**/.DS_Store
+
+# Logs
+/**/**/npm-debug.log*
+/**/**/yarn-error.log
+/**/**/dumps.log
+/**/**/corenode.log
+
+# Temporal configurations & static files
+/**/**/.aliaser
+/**/**/*.db
+/**/**/release
+/**/**/dist-compiled
