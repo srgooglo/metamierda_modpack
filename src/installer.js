@@ -150,11 +150,11 @@ const tasks = new listr([
             launcherJSON = JSON.parse(launcherJSON)
 
             launcherJSON.profiles["metamierda_modpack"] = {
-                created : "2022-05-05T12:49:42.002Z",
-                gameDir : gameDataPath,
-                javaArgs : "-Xmx4G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M",
+                created: "2022-05-05T12:49:42.002Z",
+                gameDir: gameDataPath,
+                javaArgs: "-Xmx4G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M",
                 lastVersionId: latestRelease.name,
-                name : latestRelease.name,
+                name: latestRelease.name,
                 type: "custom",
                 version: latestRelease.name,
                 icon: "Chest",
@@ -162,8 +162,18 @@ const tasks = new listr([
 
             fs.writeFileSync(profilesFilePath, JSON.stringify(launcherJSON, null, 2))
 
-            fse.copySync(path.join(gameDataPath, "versions"), path.join(minecraftGameFolder, "versions"))
+
         }
+    },
+    {
+        title: "🔍 Copy launcher libraries & versions",
+        enabled: () => {
+            return fs.existsSync(profilesFilePath)
+        },
+        task: () => {
+            fse.copySync(path.join(gameDataPath, "versions"), path.join(minecraftGameFolder, "versions"))
+            fse.copySync(path.join(gameDataPath, "libraries"), path.join(minecraftGameFolder, "libraries"))
+        },
     },
     {
         title: "🧼 Cleanup",
@@ -177,10 +187,19 @@ tasks.run().catch(err => {
     console.error(err)
 })
 
-process.on("exit", () => {
+function onExit() {
     console.log("\n\n\t Finished. Exiting on 3 seconds...")
 
     setTimeout(() => {
         process.exit(0)
     }, 3000)
-})
+}
+
+process.on("exit", onExit)
+process.on("SIGINT", onExit)
+process.on("SIGTERM", onExit)
+process.on("SIGHUP", onExit)
+process.on("SIGQUIT", onExit)
+process.on("SIGABRT", onExit)
+process.on("SIGKILL", onExit)
+process.on("SIGSTOP", onExit)
