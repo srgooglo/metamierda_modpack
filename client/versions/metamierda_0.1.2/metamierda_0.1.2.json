@@ -6,7 +6,7 @@
     "mainClass": "cpw.mods.modlauncher.Launcher",
     "inheritsFrom": "1.16.5",
     "javaArgs": "-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M",
-    "minecraftArguments": "--username ${auth_player_name} --version ${version_name} --gameDir ${game_directory} --assetsDir ${assets_root} --assetIndex ${assets_index_name} --uuid ${auth_uuid} --accessToken ${auth_access_token} --userType ${user_type} --tweakClass net.minecraftforge.fml.common.launcher.FMLTweaker --versionType MetaMierda --server metamierda.comty.pw",
+    "minecraftArguments": "--server metamierda.comty.pw --username ${auth_player_name} --version ${version_name} --gameDir ${game_directory} --assetsDir ${assets_root} --assetIndex ${assets_index_name} --uuid ${auth_uuid} --accessToken ${auth_access_token} --userType ${user_type} --tweakClass net.minecraftforge.fml.common.launcher.FMLTweaker --versionType MetaMierda",
     "arguments": {
         "game": [
             "--launchTarget",
