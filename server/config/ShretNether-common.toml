@@ -1,0 +1,33 @@
+#Range: 0 ~ 256
+"Spawnrate of Endus Funguses" = 2
+"Spawn Jawbers" = true
+"Spawn Ashlings" = true
+"Spawn Weeping Strollers" = true
+#Range: 1 ~ 256
+"Spawnrate of Jawbers" = 80
+"Spawn Soulbeasts" = true
+#Range: 1 ~ 256
+"Spawnrate of Weeping Strollers" = 50
+#Range: 0 ~ 256
+"Spawnrate of Violet Funguses" = 2
+"Generate Ash" = true
+"Generate Deathmist" = true
+#Range: 1 ~ 256
+"Spawnrate of Ashling" = 20
+#Range: 1 ~ 256
+"Spawnrate of Leechounds" = 20
+"Spawn Soul Paricles From Soulbeast" = true
+#Range: 1 ~ 256
+"Spawnrate of Soulbeasts" = 1
+"Spawn Leechounds" = true
+"Spawn Magma Golems under lava oceans" = true
+#Range: 0 ~ 256
+"Spawnrate of Scarlet Funguses" = 3
+#Range: 0 ~ 256
+"Spawnrate of Magmashrooms" = 3
+"Give Leechound Regeneration" = true
+"Make Deathmist damage living entities" = true
+#Range: 0 ~ 256
+"Spawnrate of Sparkshrooms" = 7
+"Generate Magma Golems under lava oceans" = true
+
